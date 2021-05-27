@@ -21,7 +21,7 @@ class DemoControllerSpec extends Specification {
     HttpClient client
 
     // Netty:    pass
-    // Jetty:    fail (Content-Type is text/plain)
+    // Jetty:    fails (Content-Type is text/plain)
     void "request /raw, no accept header, expecting String"() {
         when:
         HttpRequest request = HttpRequest.POST("/raw", "")
@@ -36,7 +36,7 @@ class DemoControllerSpec extends Specification {
     }
 
     // Netty:    pass
-    // Jetty:    fail (Content-Type is text/plain)
+    // Jetty:    fails (Content-Type is text/plain)
     void "request /wrapped, no accept header, expecting String"() {
         when:
         HttpRequest request = HttpRequest.POST("/wrapped", "")
